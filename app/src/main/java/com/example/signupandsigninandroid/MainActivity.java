@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
     EditText username, password, confirm_password;
     Button signup, signin;
     DBHelper DB;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                                Toast.makeText(MainActivity.this, "Sign Up Failed", Toast.LENGTH_SHORT).show();
                            }
                         }else {
-                            Toast.makeText(MainActivity.this, "User already exists! Please SignIn", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "User already exists! Please Sign in again!", Toast.LENGTH_SHORT).show();
                         }
                     }else {
                         Toast.makeText(MainActivity.this, "Password is not matching", Toast.LENGTH_SHORT).show();

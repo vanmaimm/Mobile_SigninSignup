@@ -18,11 +18,14 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase myDB) {
         myDB.execSQL("create Table users(username TEXT primary key, password TEXT )");
+//        myDB.execSQL("create Table products(id INT primary key, productName Text, productImage BLOB, description TEXT, quatity INT, price INT)");
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int i, int i1) {
         myDB.execSQL("drop Table if exists users");
+//        myDB.execSQL("drop Table if exists products");
     }
 
     public Boolean insertData(String username, String password){
@@ -37,6 +40,10 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+    // gdsjkgkjdsfgnsfdjknsfdhrthrthr
+//    public void insertData(int id, String name, int quatity, int price){
+//
+//    }
     public Boolean checkUsername(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username =?", new String[]{username});
