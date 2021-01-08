@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/cyan">
+    android:background="@color/cyan"
+    android:id="@+id/homepage">
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -21,6 +22,7 @@
         tools:layout_editor_absoluteX="-16dp" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:layout_marginStart="55dp"
@@ -85,4 +87,16 @@
                 android:text="Delivery 24/7" />
         </LinearLayout>
     </LinearLayout>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="380dp"
+        android:gravity="center"
+        android:columnWidth="120dp"
+        android:numColumns="auto_fit"
+        tools:ignore="InvalidId,MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

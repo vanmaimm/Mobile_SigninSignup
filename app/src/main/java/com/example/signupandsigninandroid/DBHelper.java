@@ -18,14 +18,16 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase myDB) {
         myDB.execSQL("create Table users(username TEXT primary key, password TEXT )");
-//        myDB.execSQL("create Table products(id INT primary key, productName Text, productImage BLOB, description TEXT, quatity INT, price INT)");
+        myDB.execSQL("create Table products(id INT primary key autoincrement, productName Text, productImage TEXT, quatity INT, price INT)");
+        String ROW1 = "INSERT INTO products" + " Values ('MIAN AN NS','image2', 12, 12000),('BALI SI SA','image3', 3, 12500), ('BIBI BSA','image4', 2, 23000)";
+        myDB.execSQL(ROW1 );
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int i, int i1) {
         myDB.execSQL("drop Table if exists users");
-//        myDB.execSQL("drop Table if exists products");
+        myDB.execSQL("drop Table if exists products");
     }
 
     public Boolean insertData(String username, String password){
@@ -40,10 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
-    // gdsjkgkjdsfgnsfdjknsfdhrthrthr
-//    public void insertData(int id, String name, int quatity, int price){
-//
-//    }
+
     public Boolean checkUsername(String username){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from users where username =?", new String[]{username});
